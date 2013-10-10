@@ -1,0 +1,48 @@
+<html>
+<head>
+  <title>{{ page_title }}</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js">
+    <style>
+    tbody tr:hover {
+      background-color: #E4E4E4;
+    }
+    thead {
+      font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="row">
+      <div class="col-xs-10 col-md-11"><h1>Dashboard</h1></div>
+      <div class="col-xs-11 col-md-1"><h1><a href="/bug/create" class="btn btn-success">Add a bug</a></h1></div>
+    </div>
+    <hr />
+      <table class="table table-condensed">
+      <thead>
+        <tr>
+          <td class="col-md-1">#</td>
+          <td class="col-md-4">Title</td>
+          <td class="col-md-7">Description</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for bug in listBugs %}
+        <tr href='/bug/view/single?id={{ bug.objectId }}'>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ bug.title }}</td>
+          <td>{{ bug.description }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    $('tr').click(function(){
+      window.location = $(this).attr('href');
+    });
+  </script>
+</body>
+</html>

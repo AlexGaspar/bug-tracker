@@ -1,0 +1,20 @@
+<html>
+<head>
+  <title>{{ page_title }}</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js">
+</head>
+<body>
+    <div class="container">
+    <div class="row">
+      <div class="col-xs-10 col-md-11"><h1>{{ bug.title }}</h1></div>
+      <div class="col-xs-11 col-md-1"><h1><a href="/bug/view" class="btn btn-primary">Cancel</a></h1></div>
+    </div>
+    <hr />
+    <blockquote>
+      <p>{{ bug.description }}</p>
+      <small>Assigned to <cite title="Source Title">{{ assigned_to }}</cite></small>
+    </blockquote>
+  </div>
+</body>
+</html>
